@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Moderation · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="admin" data-auth="required" data-role="moderator">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>Moderation</h1>
+      <p>Keep MIRA Her safe: review reports, follow up on crisis flags, answer health questions and pick up escalated chats.</p>
+    </div>
+  </div>
+
+  <div class="stat-tiles" id="stats"></div>
+
+  <div class="tabs" id="adminTabs" role="tablist">
+    <button class="tab on" data-tab="crisis" role="tab" aria-selected="true"><i class="ph-fill ph-warning"></i> Crisis follow-up <span class="count" data-count="crisis"></span></button>
+    <button class="tab" data-tab="reports" role="tab" aria-selected="false"><i class="ph-fill ph-flag"></i> Reports <span class="count" data-count="reports"></span></button>
+    <button class="tab" data-tab="escalations" role="tab" aria-selected="false"><i class="ph-fill ph-siren"></i> Escalated chats <span class="count" data-count="escalations"></span></button>
+    <button class="tab" data-tab="questions" role="tab" aria-selected="false"><i class="ph-fill ph-first-aid-kit"></i> Health questions <span class="count" data-count="questions"></span></button>
+  </div>
+
+  <div id="panel"></div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/admin.js"></script>
+</body>
+</html>

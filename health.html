@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Health &amp; body · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="health" data-auth="required">
+<main>
+  <div class="banner">
+    <div>
+      <h2>Know your body, own your health</h2>
+      <p>Clear, judgement-free information about reproductive health, a private cycle tracker, and anonymous questions answered by nurses.</p>
+    </div>
+    <img src="img/women-circle.jpg" alt="Women lying together in a circle, smiling">
+  </div>
+
+  <div class="grid-3 mb-24" id="topics"></div>
+  <section class="card topic-detail mb-24" id="topicDetail" aria-live="polite"></section>
+
+  <div class="grid-2">
+    <section class="card" id="tracker">
+      <div class="card-title"><h3><i class="ph-fill ph-drop"></i> Private cycle tracker</h3><span class="tag"><i class="ph-fill ph-lock-key"></i> Saved on this device only</span></div>
+      <form id="cycleForm" novalidate>
+        <div class="grid-2" style="gap:12px">
+          <div class="field"><label for="lastPeriod">First day of your last period</label><input id="lastPeriod" type="date"></div>
+          <div class="field"><label for="cycleLength">Usual cycle length (days)</label><input id="cycleLength" type="number" min="20" max="45" value="28"></div>
+        </div>
+        <div class="field"><label for="periodLength">How many days your period lasts</label><input id="periodLength" type="number" min="2" max="10" value="5"></div>
+        <button class="btn btn-coral" type="submit"><i class="ph-fill ph-calendar-check"></i> Show my cycle</button>
+      </form>
+      <div id="cycleResult"></div>
+      <p class="hint mt-8">These are estimates only. They are not a form of contraception.</p>
+    </section>
+
+    <section class="card" id="my-questions">
+      <div class="card-title"><h3><i class="ph-fill ph-first-aid-kit"></i> Ask a nurse anonymously</h3></div>
+      <p class="muted small mb-16">No question is too embarrassing. Our nurse team usually replies within 24 hours.</p>
+      <form id="askForm">
+        <label class="sr-only" for="question">Your question</label>
+        <textarea class="textarea" id="question" maxlength="600" placeholder="e.g. Is it normal for my period to be late when I’m stressed?"></textarea>
+        <button class="btn btn-purple mt-8" type="submit"><i class="ph-fill ph-paper-plane-tilt"></i> Send anonymously</button>
+      </form>
+      <h4 class="mt-24 mb-8">Your questions</h4>
+      <div id="myQuestions"></div>
+    </section>
+  </div>
+
+  <section class="card mt-24">
+    <div class="card-title"><h3><i class="ph-fill ph-chats-circle"></i> Recently answered</h3></div>
+    <div id="answered"></div>
+  </section>
+
+  <div class="notice mt-24"><i class="ph-fill ph-info"></i><div>This page gives general information, not a diagnosis. Public clinics in South Africa offer free contraception, HIV and STI testing, and antenatal care. Please visit your nearest clinic for personal advice.</div></div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/health.js"></script>
+</body>
+</html>

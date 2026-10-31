@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Private chat · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="listener" data-auth="required">
+<main>
+  <p class="mb-16"><a href="listener.html" class="small" id="backLink"><i class="ph-fill ph-arrow-left"></i> Back</a></p>
+  <section class="chat" aria-label="Private conversation">
+    <header class="chat-head">
+      <span id="partnerAvatar"></span>
+      <div class="who"><b id="partnerName">Connecting…</b><span id="partnerBadge"></span></div>
+      <div class="actions">
+        <button class="btn btn-outline btn-sm" id="escalateBtn"><i class="ph-fill ph-first-aid-kit"></i> <span id="escalateLabel">Request professional help</span></button>
+        <button class="btn btn-ghost btn-sm" id="endBtn"><i class="ph-fill ph-door-open"></i> End chat</button>
+      </div>
+    </header>
+    <div class="msgs" id="msgs" aria-live="polite"></div>
+    <form class="chat-input" id="chatForm">
+      <label class="sr-only" for="chatInput">Type a message</label>
+      <input id="chatInput" maxlength="1000" autocomplete="off" placeholder="Type a message…">
+      <button class="btn btn-purple" type="submit"><i class="ph-fill ph-paper-plane-tilt"></i> Send</button>
+    </form>
+
+    <div class="chat-overlay" id="waiting" hidden>
+      <div class="inner">
+        <div class="pulse"><i class="ph-fill ph-headset"></i></div>
+        <h3 style="color:var(--purple)">Connecting you with a trained peer listener…</h3>
+        <p class="muted mt-8">Take a deep breath. You don’t need to have the right words.</p>
+        <button class="btn btn-ghost btn-sm mt-16" id="cancelWait">Cancel</button>
+      </div>
+    </div>
+
+    <div class="chat-overlay" id="ended" hidden>
+      <div class="inner" id="endedInner"></div>
+    </div>
+  </section>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/chat.js"></script>
+</body>
+</html>

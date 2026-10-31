@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Reset your password · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="auth" data-page="recover" data-auth="guest">
+<main class="auth-wrap">
+  <aside class="auth-visual">
+    <div>
+      <i class="ph-fill ph-key big"></i>
+      <h2>Locked out? It happens.</h2>
+      <p>Use the recovery code you saved when you joined. We’ll give you a new one once your password is reset.</p>
+    </div>
+  </aside>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div id="resetStep">
+        <h1>Reset your password</h1>
+        <p class="muted">Enter your alias and the recovery code you saved when you joined.</p>
+        <div class="form-error" id="recoverError" role="alert" hidden></div>
+        <form id="recoverForm" novalidate>
+          <div class="field"><label for="alias">Alias</label><input id="alias" name="alias" autocomplete="username" required></div>
+          <div class="field"><label for="code">Recovery code</label><input id="code" name="code" autocomplete="off" spellcheck="false" placeholder="e.g. LAVENDER-RIVER-2026-PROTEA-DAWN" required><p class="hint">Capital letters and dashes don’t matter.</p></div>
+          <div class="field">
+            <label for="newPassword">New password</label>
+            <div class="password-wrap"><input id="newPassword" name="newPassword" type="password" autocomplete="new-password" required><button type="button" class="pw-toggle" aria-label="Show password"><i class="ph-fill ph-eye"></i></button></div>
+          </div>
+          <div class="field"><label for="newPassword2">Type it again</label><input id="newPassword2" name="newPassword2" type="password" autocomplete="new-password" required></div>
+          <button class="btn btn-coral btn-block" type="submit">Reset password</button>
+        </form>
+        <p class="center small muted mt-16"><a href="login.html">Back to log in</a></p>
+        <div class="notice mt-16"><i class="ph-fill ph-info"></i><div class="small">Lost your recovery code too? For your safety we can’t look up accounts, because we don’t know who you are. You can <a href="register.html">create a new alias</a>.</div></div>
+      </div>
+
+      <div id="doneStep" hidden>
+        <h1>Your password was reset</h1>
+        <p class="muted">Here is your new recovery code. Your old one no longer works.</p>
+        <div class="code-box" id="newCode"></div>
+        <button type="button" class="btn btn-ghost btn-sm" id="copyNew"><i class="ph-fill ph-copy"></i> Copy code</button>
+        <label class="check mt-16"><input type="checkbox" id="savedNew"> <span>I’ve saved my new recovery code</span></label>
+        <a class="btn btn-coral btn-block mt-16" id="continueBtn" href="dashboard.html" aria-disabled="true" style="pointer-events:none;opacity:.6">Continue to MIRA Her</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/recover.js"></script>
+</body>
+</html>

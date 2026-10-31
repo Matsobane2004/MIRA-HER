@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Join anonymously · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="auth" data-page="register" data-auth="guest">
+<main class="auth-wrap">
+  <aside class="auth-visual">
+    <div>
+      <i class="ph-fill ph-hand-heart big"></i>
+      <h2>Join in under a minute.</h2>
+      <p>No email. No phone number. No real name. Just a safe space to be heard.</p>
+      <ul>
+        <li><i class="ph-fill ph-check-circle"></i> Pick a random alias and avatar</li>
+        <li><i class="ph-fill ph-check-circle"></i> Choose what you’d like to talk about</li>
+        <li><i class="ph-fill ph-check-circle"></i> Save your private recovery code</li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="auth-panel">
+    <div class="auth-card wide">
+      <div class="progress" aria-hidden="true"><div class="on"></div><div></div><div></div><div></div></div>
+      <div class="form-error" id="regError" role="alert" hidden></div>
+
+      <!-- Step 1: alias and avatar -->
+      <section data-step="1">
+        <h1>Choose your alias</h1>
+        <p class="muted">This is how other members will see you. Shuffle for a new one or type your own.</p>
+        <label class="label" for="alias">Alias</label>
+        <div class="alias-box">
+          <input id="alias" maxlength="20" autocomplete="off" spellcheck="false">
+          <button type="button" class="btn btn-light btn-sm" id="shuffle"><i class="ph-fill ph-shuffle"></i> Shuffle</button>
+        </div>
+        <p class="hint" id="aliasHint">&nbsp;</p>
+        <p class="label mt-16">Pick an avatar</p>
+        <div class="avatar-grid" id="avatarGrid"></div>
+        <div class="notice mt-24"><i class="ph-fill ph-info"></i><div>Don’t use your real name, nickname or anything people could link to you.</div></div>
+      </section>
+
+      <!-- Step 2: topics and areas -->
+      <section data-step="2" hidden>
+        <h1>What would you like to talk about?</h1>
+        <p class="muted">We’ll add you to these circles. You can change them anytime.</p>
+        <div class="chips" id="topicChips"></div>
+        <p class="label mt-24">Areas you travel through <span class="muted small">(optional)</span></p>
+        <p class="hint mb-8" style="margin-top:0">We’ll let you know about safety alerts near these places. We never track your location.</p>
+        <div class="chips" id="areaChips"></div>
+      </section>
+
+      <!-- Step 3: password -->
+      <section data-step="3" hidden>
+        <h1>Create a password</h1>
+        <p class="muted">Use at least 8 characters. A short sentence you’ll remember works well.</p>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input id="password" type="password" autocomplete="new-password">
+            <button type="button" class="pw-toggle" aria-label="Show password"><i class="ph-fill ph-eye"></i></button>
+          </div>
+          <div class="strength"><div id="strengthBar"></div></div>
+          <p class="hint" id="strengthHint">&nbsp;</p>
+        </div>
+        <div class="field">
+          <label for="password2">Type it again</label>
+          <input id="password2" type="password" autocomplete="new-password">
+        </div>
+        <ul class="rules">
+          <li><i class="ph-fill ph-hand-heart"></i><span><b>Be kind.</b> Everyone here is carrying something.</span></li>
+          <li><i class="ph-fill ph-mask-happy"></i><span><b>Stay anonymous.</b> Never share names, addresses or numbers.</span></li>
+          <li><i class="ph-fill ph-flag"></i><span><b>Report harm.</b> Help keep this space safe.</span></li>
+        </ul>
+        <label class="check"><input type="checkbox" id="agree"> <span>I agree to the <a href="guidelines.html" target="_blank" rel="noopener">community guidelines</a></span></label>
+      </section>
+
+      <!-- Step 4: recovery code -->
+      <section data-step="4" hidden>
+        <h1>Save your recovery code</h1>
+        <p class="muted">Because we never ask for your email, this code is the only way to reset your password. You won’t see it again.</p>
+        <div class="code-box" id="codeBox"></div>
+        <div class="row mb-16">
+          <button type="button" class="btn btn-ghost btn-sm" id="copyCode"><i class="ph-fill ph-copy"></i> Copy</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="downloadCode"><i class="ph-fill ph-download-simple"></i> Download as a file</button>
+        </div>
+        <div class="notice coral mb-16"><i class="ph-fill ph-warning"></i><div>Keep it somewhere only you can see, like a password manager or a note hidden on your phone.</div></div>
+        <label class="check"><input type="checkbox" id="savedCode"> <span>I’ve saved my recovery code somewhere safe</span></label>
+      </section>
+
+      <div class="row-between mt-24" id="stepNav">
+        <button type="button" class="btn btn-ghost" id="backBtn">Back</button>
+        <button type="button" class="btn btn-coral" id="nextBtn">Continue</button>
+      </div>
+      <p class="center small muted mt-16" id="loginLink">Already a member? <a href="login.html">Log in</a></p>
+    </div>
+  </section>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/register.js"></script>
+</body>
+</html>

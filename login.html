@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Log in · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="auth" data-page="login" data-auth="guest">
+<main class="auth-wrap">
+  <aside class="auth-visual">
+    <div>
+      <i class="ph-fill ph-quotes big"></i>
+      <h2>Welcome back.</h2>
+      <p>Your circles, journal and safety plan are waiting, and nobody needs to know it’s you.</p>
+      <ul>
+        <li><i class="ph-fill ph-check-circle"></i> No email or phone number</li>
+        <li><i class="ph-fill ph-check-circle"></i> Closing the tab logs you out</li>
+        <li><i class="ph-fill ph-check-circle"></i> Press Esc to leave instantly</li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <h1>Log in</h1>
+      <p class="muted">Use the alias and password you chose when you joined.</p>
+      <div class="form-error" id="loginError" role="alert" hidden></div>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="alias">Alias</label>
+          <input id="alias" name="alias" autocomplete="username" placeholder="e.g. BraveLily" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+            <button type="button" class="pw-toggle" aria-label="Show password"><i class="ph-fill ph-eye"></i></button>
+          </div>
+        </div>
+        <div class="row-between small mb-16">
+          <span class="muted"><i class="ph-fill ph-lock-key"></i> You stay logged in until you close this tab.</span>
+          <a href="recover.html">Forgot password?</a>
+        </div>
+        <button class="btn btn-coral btn-block" type="submit">Log in</button>
+      </form>
+      <p class="center small muted mt-16">New here? <a href="register.html">Join anonymously</a></p>
+
+      <div class="demo-box">
+        <b><i class="ph-fill ph-presentation-chart"></i> Demo accounts for the hackathon</b>
+        <div class="demo-btns">
+          <button class="demo" data-demo="BraveLily|demo1234"><strong>BraveLily</strong>Member</button>
+          <button class="demo" data-demo="GentleMoon|listen1234"><strong>GentleMoon</strong>Peer listener</button>
+          <button class="demo" data-demo="Moderator|moderate1234"><strong>Moderator</strong>Moderator</button>
+        </div>
+        <p class="mt-8">Tap one to fill in the form. <button class="link small" id="resetDemo" type="button">Reset demo data</button></p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Circles · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="circles" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>Circles</h1>
+      <p>Anonymous group spaces. Join the ones that matter to you.</p>
+    </div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-filter="all" role="tab" aria-selected="true">All circles</button>
+    <button class="tab" data-filter="mine" role="tab" aria-selected="false">My circles</button>
+  </div>
+  <div class="grid-3" id="circleGrid"></div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/circles.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Talk to a listener · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="listener" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>Talk to a listener</h1>
+      <p>Private, anonymous, one-on-one chats with trained women volunteers.</p>
+    </div>
+  </div>
+
+  <!-- Listener Hub (listeners and moderators only) -->
+  <section class="card mb-24" id="hub" hidden>
+    <div class="card-title">
+      <h3><i class="ph-fill ph-chats-circle"></i> Listener Hub</h3>
+      <span class="tag green"><i class="ph-fill ph-circle"></i> You’re on duty</span>
+    </div>
+    <p class="muted small mb-16">While this page is open, members wait for you first before the automated demo listener steps in.</p>
+    <div class="grid-2">
+      <div>
+        <h4 class="mb-8">Waiting to talk</h4>
+        <div id="queue"></div>
+      </div>
+      <div>
+        <h4 class="mb-8">Your active conversations</h4>
+        <div id="listening"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout-side">
+    <div class="stack">
+      <section class="card" id="activeCard" hidden></section>
+
+      <section class="card" id="startCard">
+        <div class="row" style="flex-wrap:nowrap;align-items:flex-start;gap:16px">
+          <div class="tile-icon coral" style="margin:0"><i class="ph-fill ph-headset"></i></div>
+          <div style="flex:1">
+            <h3>Start a private conversation</h3>
+            <p class="muted small">A trained peer listener will join you, usually in under a minute. You don’t need to have the right words.</p>
+          </div>
+        </div>
+        <form id="startForm" class="mt-16">
+          <div class="field">
+            <label for="topic">What would you like to talk about? <span class="muted small">(optional)</span></label>
+            <select id="topic"></select>
+          </div>
+          <button class="btn btn-coral" type="submit"><i class="ph-fill ph-chat-circle-dots"></i> Start conversation</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-clock-counter-clockwise"></i> Past conversations</h3></div>
+        <div id="history"></div>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-list-checks"></i> What to expect</h3></div>
+        <div class="list-row"><span class="row" style="flex-wrap:nowrap"><i class="ph-fill ph-mask-happy" style="color:var(--purple-500);font-size:20px"></i><span>Your listener only sees your alias.</span></span></div>
+        <div class="list-row"><span class="row" style="flex-wrap:nowrap"><i class="ph-fill ph-ear" style="color:var(--purple-500);font-size:20px"></i><span>She’ll listen without judging or telling you what to do.</span></span></div>
+        <div class="list-row"><span class="row" style="flex-wrap:nowrap"><i class="ph-fill ph-door-open" style="color:var(--purple-500);font-size:20px"></i><span>You can end the chat at any time.</span></span></div>
+        <div class="list-row"><span class="row" style="flex-wrap:nowrap"><i class="ph-fill ph-first-aid-kit" style="color:var(--purple-500);font-size:20px"></i><span>Need more? Ask for professional help in the chat.</span></span></div>
+      </section>
+      <div class="notice coral"><i class="ph-fill ph-siren"></i><div><b>Peer listeners aren’t an emergency service.</b> If you’re in danger, call <a href="tel:10111">10111</a> or <a href="tel:0800428428">0800 428 428</a>.</div></div>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/listener.js"></script>
+</body>
+</html>

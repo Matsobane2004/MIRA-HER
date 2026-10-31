@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Settings · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="settings" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>Settings</h1>
+      <p>Your profile, privacy and account. Changes save as you go.</p>
+    </div>
+  </div>
+
+  <div class="layout-side">
+    <div>
+      <section class="card settings-section">
+        <div class="card-title"><h3><i class="ph-fill ph-user-circle"></i> Profile</h3></div>
+        <div class="row mb-16"><span id="currentAvatar"></span><div><b id="aliasLabel"></b><div class="muted small">Your alias can’t be changed, to keep conversations consistent.</div></div></div>
+        <p class="label">Avatar</p>
+        <div class="avatar-grid" id="avatarGrid"></div>
+      </section>
+
+      <section class="card settings-section">
+        <div class="card-title"><h3><i class="ph-fill ph-users-three"></i> Topics I care about</h3></div>
+        <p class="muted small mb-16">Used to suggest circles. Join or leave circles on the Circles page.</p>
+        <div class="chips" id="topicChips"></div>
+      </section>
+
+      <section class="card settings-section" id="areas">
+        <div class="card-title"><h3><i class="ph-fill ph-map-pin-area"></i> Safety alerts</h3></div>
+        <label class="switch"><span><b>Alerts near my areas</b><small>Get a notification when something is reported near places you travel through</small></span><input type="checkbox" id="nearbyAlerts"></label>
+        <div class="field mt-16"><label for="radius">How close?</label><select id="radius"></select></div>
+        <p class="label">Areas I travel through</p>
+        <div class="chips" id="areaChips"></div>
+      </section>
+
+      <section class="card settings-section">
+        <div class="card-title"><h3><i class="ph-fill ph-shield-check"></i> Safety and privacy</h3></div>
+        <label class="switch"><span><b>Log me out when I use Quick Exit</b><small>Recommended on shared phones and computers</small></span><input type="checkbox" id="logoutOnExit"></label>
+        <div class="notice mt-16"><i class="ph-fill ph-info"></i><div class="small">Closing this tab always logs you out. Your journal and safety plan are private, and your cycle tracker never leaves this device.</div></div>
+      </section>
+
+      <section class="card settings-section">
+        <div class="card-title"><h3><i class="ph-fill ph-key"></i> Password and recovery code</h3></div>
+        <form id="pwForm" novalidate>
+          <div class="form-error" id="pwError" role="alert" hidden></div>
+          <div class="grid-2" style="gap:12px">
+            <div class="field"><label for="currentPw">Current password</label><input id="currentPw" type="password" autocomplete="current-password"></div>
+            <div class="field"><label for="newPw">New password</label><input id="newPw" type="password" autocomplete="new-password" placeholder="At least 8 characters"></div>
+          </div>
+          <button class="btn btn-purple btn-sm" type="submit">Change password</button>
+        </form>
+        <hr style="border:none;border-top:1px solid var(--line);margin:22px 0">
+        <p class="small muted mb-8">Lost your recovery code, or think someone else has seen it? Make a new one. Your old code will stop working.</p>
+        <button class="btn btn-ghost btn-sm" id="newCodeBtn"><i class="ph-fill ph-arrows-clockwise"></i> Make a new recovery code</button>
+      </section>
+
+      <section class="card settings-section danger-zone">
+        <div class="card-title"><h3><i class="ph-fill ph-warning"></i> Delete my account</h3></div>
+        <p class="muted small mb-16">This deletes your posts, replies, journal, check-ins, safety plan and conversations. Safety alerts you reported stay on the map to protect others, but they’re no longer linked to you. This can’t be undone.</p>
+        <button class="btn btn-danger btn-sm" id="deleteBtn"><i class="ph-fill ph-trash"></i> Delete my account</button>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-presentation-chart"></i> Hackathon demo</h3></div>
+        <p class="muted small mb-16">This prototype saves everything in your browser. Reset it to bring back the original demo content.</p>
+        <button class="btn btn-ghost btn-sm" id="resetBtn"><i class="ph-fill ph-arrow-counter-clockwise"></i> Reset demo data</button>
+      </section>
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-lifebuoy"></i> Need help?</h3></div>
+        <p class="muted small mb-16">Read how we keep you safe, or find a helpline.</p>
+        <a class="btn btn-ghost btn-sm" href="privacy.html">Privacy &amp; safety</a>
+        <a class="btn btn-ghost btn-sm" href="help.html">Get help now</a>
+      </section>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/settings.js"></script>
+</body>
+</html>

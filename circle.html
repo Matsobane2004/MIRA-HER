@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Circle · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="circles" data-auth="required">
+<main>
+  <p class="mb-16"><a href="circles.html" class="small"><i class="ph-fill ph-arrow-left"></i> All circles</a></p>
+  <div id="circleHero"></div>
+
+  <div class="layout-side">
+    <div>
+      <div id="composerArea"></div>
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-sort="recent" role="tab" aria-selected="true">Recent</button>
+        <button class="tab" data-sort="supported" role="tab" aria-selected="false">Most supported</button>
+        <button class="tab" data-sort="unanswered" role="tab" aria-selected="false">Unanswered</button>
+      </div>
+      <article class="post pinned">
+        <header class="post-head"><span class="avatar avatar-md" style="background:#EFEAF5;color:#5B2A86"><i class="ph-fill ph-seal-check"></i></span>
+          <div class="post-meta"><div><b>MIRA Her Moderators</b><span class="role-badge"><i class="ph-fill ph-push-pin"></i> Pinned</span></div><small>Read before posting</small></div></header>
+        <div class="post-body">Welcome. This circle is a safe, judgement-free space. Please don’t share names, places or anything that could identify you. Use a trigger warning for difficult topics. If you’re in immediate danger, use <a href="help.html">Get Help Now</a> at the top of the page.</div>
+      </article>
+      <div id="posts"></div>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-info"></i> About this circle</h3></div>
+        <p class="muted small" id="aboutText"></p>
+        <div class="list-row"><span>Members</span><b id="memberCount"></b></div>
+        <div class="list-row"><span>Posts</span><b id="postCount"></b></div>
+      </section>
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-hand-heart"></i> Circle guidelines</h3></div>
+        <ul class="small muted" style="padding-left:18px">
+          <li class="mb-8">Be kind. Everyone here is carrying something.</li>
+          <li class="mb-8">Stay anonymous. No names, numbers or places.</li>
+          <li class="mb-8">Share experiences, not diagnoses.</li>
+          <li>Report anything that feels unsafe.</li>
+        </ul>
+        <a class="small" href="guidelines.html">Full community guidelines</a>
+      </section>
+      <section class="card talk-card">
+        <h3><i class="ph-fill ph-headset"></i> Prefer to talk privately?</h3>
+        <p>A peer listener can chat one-on-one with you right now.</p>
+        <a class="btn" href="listener.html">Talk to a listener</a>
+      </section>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/circle.js"></script>
+</body>
+</html>

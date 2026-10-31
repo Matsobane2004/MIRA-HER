@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>My journal · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="journal" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>My journal</h1>
+      <p>A private place to write things down. Nobody else can ever read it.</p>
+    </div>
+    <span class="tag coral"><i class="ph-fill ph-lock-key"></i> Only you can see this</span>
+  </div>
+
+  <div class="layout-side">
+    <div>
+      <form class="card mb-24" id="entryForm">
+        <p class="muted small mb-8" id="todayLabel"></p>
+        <p class="label">How are you feeling? <span class="muted small">(choose any)</span></p>
+        <div class="chips mb-16" id="tagChips"></div>
+        <label class="sr-only" for="entryText">Write your entry</label>
+        <textarea class="textarea" id="entryText" maxlength="5000" style="min-height:160px" placeholder="Write freely. Nothing here is shared."></textarea>
+        <div class="row-between mt-16">
+          <span class="char-count" id="entryCount">0 / 5000</span>
+          <button class="btn btn-purple" type="submit"><i class="ph-fill ph-floppy-disk"></i> Save entry</button>
+        </div>
+      </form>
+      <h3 class="mb-16">Past entries</h3>
+      <div id="entries"></div>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-chart-bar"></i> My mood, last 30 days</h3></div>
+        <div class="mood-chart" id="moodChart" role="img" aria-label="Mood check-ins for the last 30 days"></div>
+        <div class="chart-axis"><span>30 days ago</span><span>Today</span></div>
+        <p class="small muted mt-16" id="moodSummary"></p>
+        <a class="btn btn-ghost btn-sm mt-8" href="dashboard.html">Check in today</a>
+      </section>
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-lightbulb"></i> Writing prompts</h3></div>
+        <div id="prompts"></div>
+      </section>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/journal.js"></script>
+</body>
+</html>

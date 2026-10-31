@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Safety toolkit · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="safety" data-auth="required">
+<main>
+  <div class="banner">
+    <div>
+      <h2>Your safety, your power</h2>
+      <p>Practical ways to stay safe in South Africa, your legal rights, and a private safety plan you can build in a few minutes.</p>
+      <div class="row mt-16">
+        <a class="btn btn-light btn-sm" href="#plan"><i class="ph-fill ph-list-checks"></i> Build my safety plan</a>
+        <a class="btn btn-outline-light btn-sm" href="help.html"><i class="ph-fill ph-phone"></i> Helplines</a>
+      </div>
+    </div>
+    <img src="img/raised-fist.jpg" alt="A raised fist in front of a purple background">
+  </div>
+
+  <h2 class="mb-16" style="font-size:22px;color:var(--purple)">Staying safe in South Africa</h2>
+  <div class="grid-3 mb-24">
+    <div class="card tip-card"><div class="tile-icon"><i class="ph-fill ph-bus"></i></div><h3>Taxis and public transport</h3><ul><li>Use busy, official ranks and stops</li><li>Sit near the driver or other women</li><li>Text someone the taxi’s registration number</li><li>Check MIRA Her alerts for your route</li></ul></div>
+    <div class="card tip-card"><div class="tile-icon coral"><i class="ph-fill ph-car"></i></div><h3>E-hailing</h3><ul><li>Match the plate, car and driver’s name before you get in</li><li>Share your trip with someone you trust</li><li>Sit in the back seat</li><li>If anything feels wrong, ask to stop somewhere busy</li></ul></div>
+    <div class="card tip-card"><div class="tile-icon"><i class="ph-fill ph-person-simple-walk"></i></div><h3>Walking, especially at night</h3><ul><li>Stick to well-lit, busy routes</li><li>Keep your phone out of sight</li><li>Walk with a friend and share your location</li><li>Trust your instincts and cross the road if needed</li></ul></div>
+    <div class="card tip-card"><div class="tile-icon coral"><i class="ph-fill ph-heart"></i></div><h3>Dating and meeting new people</h3><ul><li>Meet in a public place the first few times</li><li>Tell a friend where you’ll be and with whom</li><li>Arrange your own transport home</li><li>Keep an eye on your drink</li></ul></div>
+    <div class="card tip-card"><div class="tile-icon"><i class="ph-fill ph-house-line"></i></div><h3>At home</h3><ul><li>Agree on a code word with someone you trust</li><li>Keep copies of your ID and documents somewhere safe</li><li>Save emergency numbers on speed dial</li><li>Know the quickest way out</li></ul></div>
+    <div class="card tip-card"><div class="tile-icon coral"><i class="ph-fill ph-device-mobile"></i></div><h3>Online and on your phone</h3><ul><li>Turn off location tags on photos and posts</li><li>Check who can see your profiles</li><li>Use a phone PIN that only you know</li><li>Screenshot threats and report them</li></ul></div>
+  </div>
+
+  <div class="layout-side">
+    <div class="stack">
+      <section class="card rights">
+        <div class="card-title"><h3><i class="ph-fill ph-scales"></i> Know your rights</h3></div>
+        <p><b>Protection orders.</b> Under the Domestic Violence Act you can apply for a protection order at your nearest magistrate’s court. It’s free, you don’t need a lawyer, and a clerk will help you with the forms.</p>
+        <p><b>After sexual assault.</b> Thuthuzela Care Centres offer medical care, counselling and help opening a case in one place. Medicine to prevent HIV (PEP) works best within 72 hours, so go as soon as you can.</p>
+        <p><b>Reporting a crime.</b> You can report at any police station, and you can ask to speak to a female officer.</p>
+        <p><b>It’s never your fault.</b> What you wore, where you were or who you were with doesn’t make violence your fault.</p>
+      </section>
+
+      <form class="card" id="plan" novalidate>
+        <div class="card-title">
+          <h3><i class="ph-fill ph-list-checks"></i> My private safety plan</h3>
+          <span class="tag" id="planSaved"><i class="ph-fill ph-lock-key"></i> Only you can see this</span>
+        </div>
+        <p class="muted small mb-16">A safety plan helps you think ahead, so you know what to do if you feel unsafe. Fill in as much or as little as you like.</p>
+        <div class="field"><label for="warningSigns">Warning signs I notice</label><textarea id="warningSigns" name="warningSigns" maxlength="600" placeholder="e.g. when he starts drinking or checks my phone"></textarea></div>
+        <div class="grid-2">
+          <div class="field"><label for="safePlaces">Safe places I can go</label><textarea id="safePlaces" name="safePlaces" maxlength="600" placeholder="e.g. my aunt’s house, the neighbour at number 12"></textarea></div>
+          <div class="field"><label for="trustedPeople">People I can call (nicknames only)</label><textarea id="trustedPeople" name="trustedPeople" maxlength="600" placeholder="e.g. Sis T, my friend from church"></textarea></div>
+        </div>
+        <div class="field"><label for="codeWord">My code word</label><input id="codeWord" name="codeWord" maxlength="600" placeholder="A word that tells someone you need help, e.g. “pineapple”"><p class="hint">Agree on this with someone you trust. If you text or say it, they know to call for help.</p></div>
+        <div class="field"><label for="takeWithMe">Things to take if I need to leave</label><textarea id="takeWithMe" name="takeWithMe" maxlength="600" placeholder="ID, phone charger, medication, cash, children’s documents, spare keys"></textarea></div>
+        <div class="field"><label for="notes">Other notes</label><textarea id="notes" name="notes" maxlength="600"></textarea></div>
+        <div class="row-between">
+          <span class="muted small" id="planUpdated"></span>
+          <button class="btn btn-coral" type="submit"><i class="ph-fill ph-floppy-disk"></i> Save my plan</button>
+        </div>
+      </form>
+    </div>
+
+    <aside class="stack">
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-phone"></i> Emergency numbers</h3></div>
+        <div class="helpline"><span><b>Police emergency</b><small>Or 112 from a cellphone</small></span><a class="btn btn-coral btn-sm" href="tel:10111">10111</a></div>
+        <div class="helpline"><span><b>GBV Command Centre</b><small>24/7 · or dial *120*7867#</small></span><a class="btn btn-purple btn-sm" href="tel:0800428428">0800 428 428</a></div>
+        <div class="helpline"><span><b>Stop Gender Violence</b><small>Helpline</small></span><a class="btn btn-purple btn-sm" href="tel:0800150150">0800 150 150</a></div>
+        <div class="helpline"><span><b>Suicide Crisis Line</b><small>SADAG</small></span><a class="btn btn-purple btn-sm" href="tel:0800567567">0800 567 567</a></div>
+        <div class="helpline"><span><b>Ambulance</b><small>Medical emergency</small></span><a class="btn btn-purple btn-sm" href="tel:10177">10177</a></div>
+        <a class="small" href="help.html">More helplines and advice</a>
+      </section>
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-map-pin-area"></i> Check before you go</h3></div>
+        <p class="muted small mb-16">See what other women have reported along your route today.</p>
+        <a class="btn btn-ghost btn-sm" href="alerts.html">Open safety alerts</a>
+      </section>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/safety.js"></script>
+</body>
+</html>

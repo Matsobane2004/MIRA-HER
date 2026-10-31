@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Mentorship · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="mentorship" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>Mentorship · Women in Tech</h1>
+      <p>Get guidance from women already working in tech, and join free online workshops.</p>
+    </div>
+  </div>
+
+  <div class="tabs" id="fieldTabs" role="tablist"></div>
+  <div class="grid-3 mb-24" id="mentors"></div>
+
+  <div class="grid-2">
+    <section class="card" id="workshops">
+      <div class="card-title"><h3><i class="ph-fill ph-calendar-check"></i> Workshops and live sessions</h3></div>
+      <div id="workshopList"></div>
+    </section>
+    <section class="card">
+      <div class="card-title"><h3><i class="ph-fill ph-paper-plane-tilt"></i> My mentorship requests</h3></div>
+      <div id="requests"></div>
+      <div class="notice mt-16"><i class="ph-fill ph-mask-happy"></i><div class="small">Mentors only see your alias and the message you write. Share contact details only if and when you feel comfortable.</div></div>
+    </section>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/mentorship.js"></script>
+</body>
+</html>

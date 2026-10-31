@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Home · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="dashboard" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1 id="greeting">Welcome back</h1>
+      <p id="today"></p>
+    </div>
+    <a class="btn btn-coral" href="circles.html"><i class="ph-fill ph-pencil-simple"></i> Share something</a>
+  </div>
+
+  <div class="layout-side">
+    <div class="stack">
+      <section class="checkin-card" aria-labelledby="checkinTitle">
+        <h3 id="checkinTitle">How are you feeling today?</h3>
+        <p id="checkinNote">Your check-in is private. It helps you spot patterns over time.</p>
+        <div class="moods" id="moods"></div>
+      </section>
+
+      <div class="notice coral" id="lowMood" hidden>
+        <i class="ph-fill ph-hand-heart"></i>
+        <div><b>We’re sorry today is hard.</b> Would it help to talk to someone? A peer listener can chat with you right now. <a href="listener.html">Talk to a listener</a></div>
+      </div>
+
+      <section>
+        <div class="row-between mb-16"><h3>From your circles</h3><a class="small" href="circles.html">All circles</a></div>
+        <div id="feed"></div>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <section class="card alert-card">
+        <div class="card-title"><h3><i class="ph-fill ph-warning"></i> <span id="alertTitle">Safety alerts</span></h3></div>
+        <div id="alertList"></div>
+        <a class="btn btn-coral btn-sm btn-block mt-16" href="alerts.html"><i class="ph-fill ph-map-pin-area"></i> Open the safety map</a>
+      </section>
+
+      <section class="card talk-card">
+        <h3><i class="ph-fill ph-headset"></i> Need to talk right now?</h3>
+        <p>A trained peer listener is ready to chat, privately and anonymously.</p>
+        <a class="btn" href="listener.html">Talk to someone now</a>
+      </section>
+
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-users-three"></i> Suggested circles</h3></div>
+        <div id="suggested"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-title"><h3><i class="ph-fill ph-calendar-check"></i> Upcoming live sessions</h3></div>
+        <div id="sessions"></div>
+        <a class="small" href="mentorship.html#workshops">See all sessions</a>
+      </section>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/dashboard.js"></script>
+</body>
+</html>

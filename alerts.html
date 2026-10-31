@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Safety alerts · MIRA Her</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-shell="app" data-page="alerts" data-auth="required">
+<main>
+  <div class="page-head">
+    <div>
+      <h1>Safety alerts</h1>
+      <p>Warn each other about unsafe places. Reports are anonymous and locations are blurred by up to 150 m.</p>
+    </div>
+    <a class="btn btn-coral" href="#reportForm"><i class="ph-fill ph-megaphone"></i> Report something</a>
+  </div>
+
+  <div class="layout-side">
+    <div>
+      <div class="map-wrap">
+        <div id="map" aria-label="Map of safety alerts"></div>
+        <div class="map-tip"><i class="ph-fill ph-hand-pointing"></i> Tap the map to choose where something happened</div>
+      </div>
+      <div class="legend">
+        <span><i class="dot" style="background:#E5484D"></i> Harassment, followed or threatened</span>
+        <span><i class="dot" style="background:#B4233A"></i> Assault</span>
+        <span><i class="dot" style="background:#F08C2E"></i> Theft or robbery</span>
+        <span><i class="dot" style="background:#8E5BD0"></i> Unsafe transport</span>
+        <span><i class="dot" style="background:#6E6280"></i> Poor lighting or unsafe area</span>
+      </div>
+
+      <section class="card">
+        <div class="card-title">
+          <h3><i class="ph-fill ph-list-bullets"></i> Recent alerts</h3>
+          <div class="tabs" style="margin:0" role="tablist">
+            <button class="tab" data-days="1" role="tab">24 hours</button>
+            <button class="tab on" data-days="7" role="tab" aria-selected="true">7 days</button>
+            <button class="tab" data-days="30" role="tab">30 days</button>
+          </div>
+        </div>
+        <label class="check mb-8"><input type="checkbox" id="nearOnly"> <span>Only show alerts near my areas</span></label>
+        <div id="alertList"></div>
+      </section>
+    </div>
+
+    <aside class="stack">
+      <form class="card" id="reportForm" novalidate>
+        <div class="card-title"><h3><i class="ph-fill ph-megaphone"></i> Report something that happened</h3></div>
+        <div class="form-error" id="reportError" role="alert" hidden></div>
+        <div class="field">
+          <label>Where did it happen?</label>
+          <div class="row">
+            <button type="button" class="btn btn-ghost btn-sm" id="useLocation"><i class="ph-fill ph-crosshair"></i> Use my location</button>
+            <span class="muted small">or tap the map</span>
+          </div>
+          <p class="pick-status" id="pickStatus"><i class="ph-fill ph-map-pin"></i> No place chosen yet</p>
+        </div>
+        <div class="field">
+          <label for="areaSelect">Or choose an area</label>
+          <select id="areaSelect"><option value="">Choose an area…</option></select>
+        </div>
+        <div class="field">
+          <label for="place">Short description of the place <span class="muted small">(optional)</span></label>
+          <input id="place" maxlength="80" placeholder="e.g. Bree taxi rank, near the north exit">
+        </div>
+        <div class="field">
+          <label for="type">What happened?</label>
+          <select id="type"></select>
+        </div>
+        <div class="field">
+          <label for="happened">When?</label>
+          <select id="happened"></select>
+        </div>
+        <div class="field">
+          <label for="details">Details <span class="muted small">(optional)</span></label>
+          <textarea id="details" maxlength="400" placeholder="What should other women know? Don’t include names or anything that identifies you."></textarea>
+        </div>
+        <label class="check mb-16"><input type="checkbox" id="notify" checked> <span>Alert members who travel through this area</span></label>
+        <button class="btn btn-coral btn-block" type="submit"><i class="ph-fill ph-paper-plane-tilt"></i> Send anonymous alert</button>
+        <p class="hint mt-8">In danger right now? Call <b>10111</b>, or <b>112</b> from a cellphone.</p>
+      </form>
+
+      <section class="card" id="areas">
+        <div class="card-title"><h3><i class="ph-fill ph-bell-ringing"></i> My alert settings</h3></div>
+        <label class="switch"><span><b>Alerts near my areas</b><small>Get a notification when something is reported nearby</small></span><input type="checkbox" id="nearbySetting"></label>
+        <div class="field mt-16">
+          <label for="radius">How close?</label>
+          <select id="radius"></select>
+        </div>
+        <p class="label">Areas I travel through</p>
+        <div class="chips" id="areaChips"></div>
+      </section>
+    </aside>
+  </div>
+</main>
+<script src="js/store.js"></script>
+<script src="js/common.js"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="js/pages/alerts.js"></script>
+</body>
+</html>
